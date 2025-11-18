@@ -1,0 +1,43 @@
+@model InscripcionesWebApp.Models.Inscripcion
+
+@{
+    ViewData["Title"] = "Editar Inscripción";
+}
+
+<h2>Editar Inscripción</h2>
+
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" />
+        <span asp-validation-for="Nombre"></span>
+    </div>
+    <div>
+        <label>Documento</label>
+        <input asp-for="Documento" />
+        <span asp-validation-for="Documento"></span>
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label>Teléfono</label>
+        <input asp-for="Telefono" />
+    </div>
+    <div>
+        <label>Programa</label>
+        <input asp-for="Programa" />
+        <span asp-validation-for="Programa"></span>
+    </div>
+    <div>
+        <label>Fecha de inscripción</label>
+        <input asp-for="FechaInscripcion" type="date" />
+        <span asp-validation-for="FechaInscripcion"></span>
+    </div>
+    <button type="submit">Guardar cambios</button>
+</form>
+
+<partial name="_ValidationScriptsPartial" />

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Inscripciones</title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestor de Inscripciones</h1>
+        </header>
+        <main role="main">
+            @RenderBody()
+        </main>
+        <footer>
+            <hr />
+            <small>Proyecto educativo - Guardado en JSON</small>
+        </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

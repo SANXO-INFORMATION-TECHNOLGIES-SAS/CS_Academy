@@ -1,0 +1,43 @@
+@model IEnumerable<InscripcionesWebApp.Models.Inscripcion>
+
+@{
+    ViewData["Title"] = "Listado de Inscripciones";
+}
+
+<h2>Inscripciones</h2>
+
+<p><a asp-action="Crear">Nueva inscripción</a></p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Documento</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Programa</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Documento</td>
+                <td>@item.Email</td>
+                <td>@item.Telefono</td>
+                <td>@item.Programa</td>
+                <td>@item.FechaInscripcion.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <form asp-action="Eliminar" method="post" style="display:inline">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit">Eliminar</button>
+                    </form>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
