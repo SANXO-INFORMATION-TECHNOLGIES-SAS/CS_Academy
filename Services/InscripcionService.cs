@@ -15,8 +15,9 @@ namespace InscripcionesWebApp.Services
         public InscripcionService(IWebHostEnvironment env)
         {
             var dataDir = Path.Combine(env.ContentRootPath, "data");
+            var dinamicName= "Inscripciones_"+DateTime.Now.ToString("_YYYYMMddHHmmss")+".json";
             if (!Directory.Exists(dataDir)) Directory.CreateDirectory(dataDir);
-            _dataPath = Path.Combine(dataDir, "inscripciones.json");
+            _dataPath = Path.Combine(dataDir, dinamicName);
             if (!File.Exists(_dataPath))
             {
                 File.WriteAllText(_dataPath, "[]");
