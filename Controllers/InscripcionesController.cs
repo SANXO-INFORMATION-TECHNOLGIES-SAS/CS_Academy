@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using InscripcionesWebApp.Models;
 using InscripcionesWebApp.Services;
+using System.Linq;
+
 
 namespace InscripcionesWebApp.Controllers
 {
